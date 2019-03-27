@@ -124,6 +124,9 @@ $config = [
         'sala' => [
            'class' => 'app\modules\sala\sala',
        ],
+       'gridview' =>  [
+    'class' => '\kartik\grid\Module'
+    ],
     ],
     'params' => $params,
 ];

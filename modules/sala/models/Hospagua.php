@@ -56,7 +56,7 @@ class Hospagua extends \yii\db\ActiveRecord
             'agua_porcentaje_de_llenado' => Yii::t('app', 'Agua Porcentaje De Llenado'),
             'agua_gasto_diario' => Yii::t('app', 'Agua Gasto Diario'),
             'agua_reservas_lts' => Yii::t('app', 'Agua Reservas Lts'),
-            'agua_tanques_para_consumo_1500_lts' => Yii::t('app', 'Agua Tanques Para Consumo 1500 Lts'),
+            'agua_tanques_para_consumo_1500_lts' => Yii::t('app', 'Necesita Tanques Agua Para Consumo 1500 Lts (solo DTTO)'),
             'agua_por_tuberia' => Yii::t('app', 'Agua Por Tuberia'),
             'observaciones' => Yii::t('app', 'Observaciones'),
             'id_usuario' => Yii::t('app', 'Id Usuario'),
