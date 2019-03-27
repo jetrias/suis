@@ -94,7 +94,7 @@ class Establecimiento extends \yii\db\ActiveRecord
             'rif' => Yii::t('app', 'Rif'),
             'funciona' => Yii::t('app', 'Funciona'),
             'id_tipo_establecimiento' => Yii::t('app', 'Id Tipo Establecimiento'),
-            'codigo_estado' => Yii::t('app', 'Codigo Estado'),
+            'codigo_estado' => Yii::t('app', 'Estado'),
             'codigo_municipio' => Yii::t('app', 'Codigo Municipio'),
             'id_parroquia' => Yii::t('app', 'Id Parroquia'),
             'id_comunidad' => Yii::t('app', 'Id Comunidad'),
@@ -203,4 +203,5 @@ class Establecimiento extends \yii\db\ActiveRecord
             $this->nombre
         ]);
     }
+
 }

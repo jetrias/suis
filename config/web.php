@@ -121,6 +121,9 @@ $config = [
         'org-sani' => [
             'class' => 'app\modules\organizacion_sanitaria\OrgSaniModule',
         ],
+        'sala' => [
+           'class' => 'app\modules\sala\sala',
+       ],
     ],
     'params' => $params,
 ];

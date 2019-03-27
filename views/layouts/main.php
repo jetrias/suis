@@ -219,7 +219,7 @@ JAVASCRIPT
     </section>
 
     <!-- Right Sidebar Start -->
-    <div class="right side-menu">
+    <!--div class="right side-menu">
 
         <ul class="nav nav-tabs nav-justified" id="right-tabs">
           <li class="active"><a href="#feed" data-toggle="tab" title="Live Feed"><i class="icon-rss-2"></i></a></li>
@@ -375,14 +375,14 @@ JAVASCRIPT
                 </div>
             </div>
         </div>
-    </div>
+    </div-->
     <!-- Right Sidebar End -->
 
     <div class="content-page">
-        <div class="content"> 
-           <?= Breadcrumbs::widget([ 
-             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [], 
-           ]) ?> 
+        <div class="content">
+           <?= Breadcrumbs::widget([
+             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+           ]) ?>
            <?= $content ?>
         </div>
     </div>

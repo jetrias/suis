@@ -40,7 +40,9 @@ class AppAsset extends AssetBundle
        'js/init.js',
        'js/main.js',
        'js/utility/utility.js',
-       'libs/jquery-ui-1.12.1.custom/jquery-ui.min.js'
+       'libs/jquery-ui-1.12.1.custom/jquery-ui.min.js',
+       'js/validations/parsley.js',
+       'js/validations/parsleycall.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',
