@@ -95,6 +95,9 @@ $this->params['breadcrumbs'][] = $this->title;
                             case 'agua':
                                 return ["hospagua/save", 'id' => $model->id];
                                 break;
+                            case 'novedad':
+                                return ["novedades/save", 'id' => $model->id];
+                                break;
                         }
                     },
                     'buttons' => [
@@ -132,6 +135,18 @@ $this->params['breadcrumbs'][] = $this->title;
                                 'aria-label' => 'Dialisis',
                                 'data-pjax' => 0,
                                 'data-title' => 'Dialisis ' ,
+                                'class' => 'link-for-modal',
+                            ]);
+                        },
+                         'novedad' => function ($url, $model, $key)  {
+                            $icon = Html::tag('span', '', [
+                                'class' => 'glyphicon glyphicon-heart',
+                            ]);
+                            return Html::a($icon, $url, [
+                                'title' => 'Novedad',
+                                'aria-label' => 'Novedad',
+                                'data-pjax' => 0,
+                                'data-title' => 'Novedad ' ,
                                 'class' => 'link-for-modal',
                             ]);
                         },
@@ -184,7 +199,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             ]);
                         },
                     ],
-                    'template' => '{dialisis}{movimiento}{ambulancia}{sergeneral}{agua}'
+                    'template' => '{dialisis}{movimiento}{ambulancia}{sergeneral}{agua}{novedad}'
                 ],
             ],
         ]); ?>
