@@ -109,13 +109,15 @@ $this->title = 'Sistema Único de Información en Salud';
                 </div>
             </div>
         </div>
-        <div class="widget widget1x1 widget_grey" data-url="" data-theme="grey" data-name="">
-            <div class="widget_content">
-                <div class="main">
-                    <span></span>
+        <div class="widget widget1x1 widget_white" data-url="" data-theme="white" data-name="">
+              <a href="<?= Yii::$app->urlManager->createUrl(['/sala/establecimiento/'])?>"  style="color: white;">
+                <div class="widget_content">
+                <div class="main" style="background-image:url('<?= Yii::getAlias('@web') ?>/img/sala.jpg'); background-size: contain;">
+                        <span>SALA - SIT</span>
+                    </div>
                 </div>
-            </div>
-        </div>
+        </a>
+    </div>
         <div class="widget widget1x1 widget_grey" data-url="" data-theme="grey" data-name="">
             <div class="widget_content">
                 <div class="main">
