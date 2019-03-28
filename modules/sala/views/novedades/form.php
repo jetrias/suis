@@ -67,7 +67,8 @@ $this->params['breadcrumbs'][] = $currentAction;
 
     <div class="row">
         <div class="col-md-12">
-            <?= $form->field($model, 'estatus')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'estatus')->dropDownList(
+               ['prompt'=>'Seleccione','PENDIENTE' => 'PENDIENTE', 'EN TRAMITE' => 'EN TRAMITE','RESUELTO' => 'RESUELTO'] ); ?>
         </div>
     </div>
 
