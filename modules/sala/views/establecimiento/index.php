@@ -146,7 +146,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         },
                          'novedad' => function ($url, $model, $key)  {
                             $icon = Html::tag('span', '', [
-                                'class' => 'glyphicon glyphicon-heart',
+                                'class' => 'glyphicon glyphicon-exclamation-sign',
                             ]);
                             return Html::a($icon, $url, [
                                 'title' => 'Novedad',
