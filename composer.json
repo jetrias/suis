@@ -29,7 +29,8 @@
         "kartik-v/yii2-krajee-base": "@dev",
         "bower-asset/select2": "^4.0",
         "bower-asset/select2-bootstrap-theme": "@dev",
-        "johnitvn/yii2-ajaxcrud": "*"
+        "johnitvn/yii2-ajaxcrud": "*",
+        "kartik-v/yii2-export": "dev-master"
 
     },
     "require-dev": {
