@@ -24,13 +24,13 @@ CrudAsset::register($this);
     <?php
     echo ExportMenu::widget([
     'dataProvider' => $dataProvider,
-    'columns' =>require(__DIR__.'/_columns.php'),a
+    'columns' =>require(__DIR__.'/_columns.php'),
     'exportConfig' => [
         ExportMenu::FORMAT_EXCEL => true,
         ExportMenu::FORMAT_TEXT => false,
         ExportMenu::FORMAT_HTML => false,
         ExportMenu::FORMAT_PDF => false,
-        ExportMenu::FORMAT_CSV => false,s
+        ExportMenu::FORMAT_CSV => false,
     ],
     'dropdownOptions' => [
         'label' => 'Export All',
