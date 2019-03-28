@@ -7,6 +7,7 @@ use kartik\grid\GridView;
 use johnitvn\ajaxcrud\CrudAsset; 
 use johnitvn\ajaxcrud\BulkButtonWidget;
 
+
 /* @var $this yii\web\View */
 /* @var $searchModel app\modules\sala\models\SalareportegeneralssSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -18,9 +19,15 @@ $this->params['breadcrumbs'][] = $this->title;
 CrudAsset::register($this);
 
 ?>
-
+<p>
+     <?= Html::a(Yii::t('app', 'regresar'), ['/sala/establecimiento '], [
+        'class' => 'btn btn-success',
+        'data-title' => Yii::t('app', 'regresar')
+    ]) ?>
+</p>
 <div class="salareportegeneralss-index">
     <div id="ajaxCrudDatatable">
+
     <?php
     echo ExportMenu::widget([
     'dataProvider' => $dataProvider,
@@ -42,16 +49,16 @@ CrudAsset::register($this);
             'filterModel' => $searchModel,
             'pjax'=>true,
             'columns' => require(__DIR__.'/_columns.php'),
-            //'toolbar'=> [
-            //    ['content'=>
+            'toolbar'=> [
+               ['content'=>
                     //Html::a('<i class="glyphicon glyphicon-plus"></i>', ['create'],
                     //['role'=>'modal-remote','title'=> 'Create new Salareportegeneralsses','class'=>'btn btn-default']).
-             //       Html::a('<i class="glyphicon glyphicon-repeat"></i>', [''],
-             //       ['data-pjax'=>1, 'class'=>'btn btn-default', 'title'=>'Reset Grid']).
+                   Html::a('<i class="glyphicon glyphicon-repeat"></i>', [''],
+                    ['data-pjax'=>1, 'class'=>'btn btn-default', 'title'=>'Reset Grid']),//.
              //       '{toggleData}'//.
                     //'{export}'
-             //   ],
-            //],          
+                ],
+            ],          
             'striped' => true,
             'condensed' => true,
             'responsive' => true,          

@@ -23,6 +23,7 @@ return [
     [
         'class'=>'\kartik\grid\DataColumn',
         'attribute'=>'nombre',
+        'label'=>'Nombre del Hospital',
     ],
     [
         'class'=>'\kartik\grid\DataColumn',

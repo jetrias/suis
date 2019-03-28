@@ -5,6 +5,7 @@ use yii\bootstrap\Modal;
 use kartik\grid\GridView;
 use johnitvn\ajaxcrud\CrudAsset; 
 use johnitvn\ajaxcrud\BulkButtonWidget;
+use kartik\export\ExportMenu;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\modules\sala\models\SalareportenovedadesssSearch */
@@ -17,9 +18,30 @@ $this->params['breadcrumbs'][] = $this->title;
 CrudAsset::register($this);
 
 ?>
+<p>
+     <?= Html::a(Yii::t('app', 'regresar'), ['/sala/establecimiento '], [
+        'class' => 'btn btn-success',
+        'data-title' => Yii::t('app', 'regresar')
+    ]) ?>
+</p>
 <div class="salareportenovedadesss-index">
     <div id="ajaxCrudDatatable">
-        <?=GridView::widget([
+    <?php
+    echo ExportMenu::widget([
+    'dataProvider' => $dataProvider,
+    'columns' =>require(__DIR__.'/_columns.php'),
+    'exportConfig' => [
+        ExportMenu::FORMAT_EXCEL => true,
+        ExportMenu::FORMAT_TEXT => false,
+        ExportMenu::FORMAT_HTML => false,
+        ExportMenu::FORMAT_PDF => false,
+        ExportMenu::FORMAT_CSV => false,
+    ],
+    'dropdownOptions' => [
+        'label' => 'Export All',
+        'class' => 'btn btn-secondary'
+    ]
+    ]) . "<hr>\n".GridView::widget([
             'id'=>'crud-datatable',
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
@@ -29,10 +51,10 @@ CrudAsset::register($this);
                 ['content'=>
                    /* Html::a('<i class="glyphicon glyphicon-plus"></i>', ['create'],
                     ['role'=>'modal-remote','title'=> 'Create new Salareportenovedadessses','class'=>'btn btn-default']).*/
-                    Html::a('<i class="glyphicon glyphicon-repeat"></i>', [''],
-                    ['data-pjax'=>1, 'class'=>'btn btn-default', 'title'=>'Reset Grid']).
-                    '{toggleData}'.
-                    '{export}'
+                   Html::a('<i class="glyphicon glyphicon-repeat"></i>', [''],
+                   ['data-pjax'=>1, 'class'=>'btn btn-default', 'title'=>'Reset Grid']),//.
+                    //'{toggleData}'.
+                    //'{export}'
                 ],
             ],          
             'striped' => true,
