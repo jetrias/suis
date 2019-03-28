@@ -128,7 +128,7 @@ JAVASCRIPT
                       echo Yii::$app->user->identity->username;
                     }
                     else{
-                      return['site/login'];
+                      return['/site/login'];
                       exit;
                     }?></b></div>
                     <div class="profile-buttons">
