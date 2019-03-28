@@ -5972,3 +5972,8 @@ body.sb-l-c.sb-l-m #wrapper {
     color: #fff;
     border: none;
 }
+.panel-primary .panel-heading{
+  background-color: #C10B19;
+  color:  #fff;
+  border-color: #C10B19;
+}

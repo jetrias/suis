@@ -2,10 +2,10 @@
 use yii\helpers\Url;
 
 return [
-    [
+  /*  [
         'class' => 'kartik\grid\CheckboxColumn',
         'width' => '20px',
-    ],
+    ],*/
     [
         'class' => 'kartik\grid\SerialColumn',
         'width' => '30px',
@@ -54,7 +54,7 @@ return [
          'class'=>'\kartik\grid\DataColumn',
          'attribute'=>'estatus',
      ],
-    [
+    /*[
         'class' => 'kartik\grid\ActionColumn',
         'dropdown' => false,
         'vAlign'=>'middle',
@@ -69,6 +69,6 @@ return [
                           'data-toggle'=>'tooltip',
                           'data-confirm-title'=>'Are you sure?',
                           'data-confirm-message'=>'Are you sure want to delete this item'], 
-    ],
+    ],*/
 
 ];   
