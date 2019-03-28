@@ -10,7 +10,8 @@ use johnitvn\ajaxcrud\BulkButtonWidget;
 /* @var $searchModel app\modules\sala\models\SalareportenovedadesssSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Salareportenovedadessses';
+$this->title = 'Reporte de Novedades';
+$this->params['breadcrumbs'][] = ['label' => 'Establecimiento', 'url' => ['/sala/establecimiento']];
 $this->params['breadcrumbs'][] = $this->title;
 
 CrudAsset::register($this);
