@@ -7,9 +7,11 @@ use Yii;
 /**
  * This is the model class for table "sala.reporte_general_ss".
  *
+ * @property int $id
  * @property string $codigo
  * @property string $nombre
  * @property string $direccion
+ * @property string $telefono
  * @property string $puede_dializar
  * @property string $pe_d
  * @property string $esta_conectado_planta_electrica_del_hospital
@@ -94,13 +96,14 @@ use Yii;
 class Salareportegeneralss extends \yii\db\ActiveRecord
 {
     /**
-     * Clave Primaria
+     * Primary Key
      */
-
     public static function primaryKey()
     {
-        return 'cod_establecimiento_salud';
+        return ['id'];
     }
+
+
     /**
      * {@inheritdoc}
      */
@@ -115,11 +118,13 @@ class Salareportegeneralss extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['codigo', 'nombre', 'direccion', 'puede_dializar', 'pe_d', 'esta_conectado_planta_electrica_del_hospital', 'pe_diesel', 'dia_tot_pe_ope', 'dia_tot_pe_ino', 'planta_electrica_aceite', 'planta_electrica_cantidad_aceite_requerido', 'planta_electrica_tipo_aceite_requerido', 'planta_electrica_dissel', 'planta_electrica_cantidad_dissel_requerido', 'planta_electrica_bateria', 'planta_electrica_cantidad_baterias_requeridas', 'planta_electrica_nivel_dissel_restante', 'planta_electrica_refrigerante_necesidad', 'planta_electrica_nivel_refrigerante_restante', 'planta_electrica_nivel_aceite_restante', 'planta_electrica_tecnico_de_guardia', 'planta_electrica_telefono_tecnico_guardia', 'agua_disponible', 'capacidad_tanque', 'maquinas_operativas', 'maquinas_inoperativas', 'total_maquinas', 'pacientes_que_atiende', 'planta_de_osmosis', 'persona_responsable', 'observaciones', 'cod_establecimiento_salud', 'establecimiento_de_salud', 'agua_capacidad_total_lts', 'agua_porcentaje_de_llenado', 'agua_gasto_diario', 'agua_reservas_lts', 'agua_tanques_para_consumo_1500_lts', 'agua_por_tuberia', 'observaciones_agua', 'total_ambulancias', 'ambulancias_de_apoyo_con', 'ambulancias_con_soporte_vital', 'observaciones_ambulancias', 'camas_operativas', 'pacientes_criticos_adultos', 'pacientes_criticos_ninos', 'uti_neonatal_pacientes', 'utineonatal_cupos_disponibles', 'uti_camas_operativas', 'uti_camas_disponibles', 'quirofanos_emergencias_operativos', 'quirofanos_emergencias_inoperativos', 'equipo_de_guardia', 'total_muertes_maternas', 'detalle_muerte_materna', 'servicio_hemoderivados', 'servicio_hemoderivados_operativos', 'observaciones_movimiento', 'pe_ser_gen', 'ser_gen_total_pe_op', 'ser_gen_tot_pe_ino', '_ser_gen_pe_ace', 'ser_gen_can_ace', 'ser_gen_pe_tip_ace', 'ser_gen_diesel_pe', 'ser_gen_diesel_re_pe', 'ser_pe_bat', 'ser_pe_bat_req', 'ser_pe_di_res', 'ser_pe_ref_nec', 'ser_gen_ref_res', 'ser_gen_race_res', 'ser_gen_tec_pe', 'ser_gen_tec_tlf', 'refrigeracion_de_alimentos', 'gases_medicinales_operativo', 'gases_medicinales_reservas', 'equipos_esterilizacion', 'desechos', 'observaciones_desechos', 'observaciones_serv_gen', 'estado'], 'default', 'value' => null],
+            [['id', 'codigo', 'nombre', 'direccion', 'telefono', 'puede_dializar', 'pe_d', 'esta_conectado_planta_electrica_del_hospital', 'pe_diesel', 'dia_tot_pe_ope', 'dia_tot_pe_ino', 'planta_electrica_aceite', 'planta_electrica_cantidad_aceite_requerido', 'planta_electrica_tipo_aceite_requerido', 'planta_electrica_dissel', 'planta_electrica_cantidad_dissel_requerido', 'planta_electrica_bateria', 'planta_electrica_cantidad_baterias_requeridas', 'planta_electrica_nivel_dissel_restante', 'planta_electrica_refrigerante_necesidad', 'planta_electrica_nivel_refrigerante_restante', 'planta_electrica_nivel_aceite_restante', 'planta_electrica_tecnico_de_guardia', 'planta_electrica_telefono_tecnico_guardia', 'agua_disponible', 'capacidad_tanque', 'maquinas_operativas', 'maquinas_inoperativas', 'total_maquinas', 'pacientes_que_atiende', 'planta_de_osmosis', 'persona_responsable', 'observaciones', 'cod_establecimiento_salud', 'establecimiento_de_salud', 'agua_capacidad_total_lts', 'agua_porcentaje_de_llenado', 'agua_gasto_diario', 'agua_reservas_lts', 'agua_tanques_para_consumo_1500_lts', 'agua_por_tuberia', 'observaciones_agua', 'total_ambulancias', 'ambulancias_de_apoyo_con', 'ambulancias_con_soporte_vital', 'observaciones_ambulancias', 'camas_operativas', 'pacientes_criticos_adultos', 'pacientes_criticos_ninos', 'uti_neonatal_pacientes', 'utineonatal_cupos_disponibles', 'uti_camas_operativas', 'uti_camas_disponibles', 'quirofanos_emergencias_operativos', 'quirofanos_emergencias_inoperativos', 'equipo_de_guardia', 'total_muertes_maternas', 'detalle_muerte_materna', 'servicio_hemoderivados', 'servicio_hemoderivados_operativos', 'observaciones_movimiento', 'pe_ser_gen', 'ser_gen_total_pe_op', 'ser_gen_tot_pe_ino', '_ser_gen_pe_ace', 'ser_gen_can_ace', 'ser_gen_pe_tip_ace', 'ser_gen_diesel_pe', 'ser_gen_diesel_re_pe', 'ser_pe_bat', 'ser_pe_bat_req', 'ser_pe_di_res', 'ser_pe_ref_nec', 'ser_gen_ref_res', 'ser_gen_race_res', 'ser_gen_tec_pe', 'ser_gen_tec_tlf', 'refrigeracion_de_alimentos', 'gases_medicinales_operativo', 'gases_medicinales_reservas', 'equipos_esterilizacion', 'desechos', 'observaciones_desechos', 'observaciones_serv_gen', 'estado'], 'default', 'value' => null],
+            [['id'], 'integer'],
             [['observaciones_agua', 'observaciones_ambulancias', 'observaciones_movimiento', 'observaciones_desechos', 'observaciones_serv_gen'], 'string'],
             [['codigo'], 'string', 'max' => 20],
             [['nombre'], 'string', 'max' => 150],
             [['direccion'], 'string', 'max' => 250],
+            [['telefono'], 'string', 'max' => 11],
             [['puede_dializar', 'pe_d', 'esta_conectado_planta_electrica_del_hospital', 'pe_diesel', 'dia_tot_pe_ope', 'dia_tot_pe_ino', 'planta_electrica_aceite', 'planta_electrica_cantidad_aceite_requerido', 'planta_electrica_tipo_aceite_requerido', 'planta_electrica_dissel', 'planta_electrica_cantidad_dissel_requerido', 'planta_electrica_bateria', 'planta_electrica_cantidad_baterias_requeridas', 'planta_electrica_nivel_dissel_restante', 'planta_electrica_refrigerante_necesidad', 'planta_electrica_nivel_refrigerante_restante', 'planta_electrica_nivel_aceite_restante', 'planta_electrica_tecnico_de_guardia', 'planta_electrica_telefono_tecnico_guardia', 'agua_disponible', 'capacidad_tanque', 'maquinas_operativas', 'maquinas_inoperativas', 'total_maquinas', 'pacientes_que_atiende', 'planta_de_osmosis', 'persona_responsable', 'observaciones', 'cod_establecimiento_salud', 'establecimiento_de_salud', 'agua_capacidad_total_lts', 'agua_porcentaje_de_llenado', 'agua_gasto_diario', 'agua_reservas_lts', 'agua_tanques_para_consumo_1500_lts', 'agua_por_tuberia', 'total_ambulancias', 'ambulancias_de_apoyo_con', 'ambulancias_con_soporte_vital', 'camas_operativas', 'pacientes_criticos_adultos', 'pacientes_criticos_ninos', 'uti_neonatal_pacientes', 'utineonatal_cupos_disponibles', 'uti_camas_operativas', 'uti_camas_disponibles', 'quirofanos_emergencias_operativos', 'quirofanos_emergencias_inoperativos', 'equipo_de_guardia', 'total_muertes_maternas', 'detalle_muerte_materna', 'servicio_hemoderivados', 'servicio_hemoderivados_operativos', 'pe_ser_gen', 'ser_gen_total_pe_op', 'ser_gen_tot_pe_ino', '_ser_gen_pe_ace', 'ser_gen_can_ace', 'ser_gen_pe_tip_ace', 'ser_gen_diesel_pe', 'ser_gen_diesel_re_pe', 'ser_pe_bat', 'ser_pe_bat_req', 'ser_pe_di_res', 'ser_pe_ref_nec', 'ser_gen_ref_res', 'ser_gen_race_res', 'ser_gen_tec_pe', 'ser_gen_tec_tlf', 'refrigeracion_de_alimentos', 'gases_medicinales_operativo', 'gases_medicinales_reservas', 'equipos_esterilizacion', 'desechos'], 'string', 'max' => 255],
             [['estado'], 'string', 'max' => 50],
         ];
@@ -131,9 +136,11 @@ class Salareportegeneralss extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
+            'id' => Yii::t('app', 'ID'),
             'codigo' => Yii::t('app', 'Codigo'),
             'nombre' => Yii::t('app', 'Nombre'),
             'direccion' => Yii::t('app', 'Direccion'),
+            'telefono' => Yii::t('app', 'Telefono'),
             'puede_dializar' => Yii::t('app', 'Puede Dializar'),
             'pe_d' => Yii::t('app', 'Pe D'),
             'esta_conectado_planta_electrica_del_hospital' => Yii::t('app', 'Esta Conectado Planta Electrica Del Hospital'),

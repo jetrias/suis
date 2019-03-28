@@ -25,7 +25,11 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
      <p>
-        <?= Html::a(Yii::t('app', 'Reporte'), ['salareportenovedadesss/index '], [
+         <?= Html::a(Yii::t('app', 'Reporte General'), ['salareportegeneralss/index '], [
+            'class' => 'btn btn-success',
+            'data-title' => Yii::t('app', 'Imprimir Reporte')
+        ]) ?>
+        <?= Html::a(Yii::t('app', 'Reporte Novedades'), ['salareportenovedadesss/index '], [
             'class' => 'btn btn-success',
             'data-title' => Yii::t('app', 'Imprimir Reporte')
         ]) ?>
