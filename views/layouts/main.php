@@ -124,7 +124,13 @@ JAVASCRIPT
                     <a class="rounded-image profile-image"><img src="<?= Yii::$app->request->baseUrl; ?>/img/logos/logo_mpps.png" alt="avatar"> </a>
                 </div>
                 <div class="col-xs-8">
-                    <div class="profile-text">Bienvenido,<br/><b><?=Yii::$app->user->identity->username;?></b></div>
+                    <div class="profile-text">Bienvenido,<br/><b><?php if((Yii::$app->user->identity)!=null){ 
+                      echo Yii::$app->user->identity->username;
+                    }
+                    else{
+                      return['site/login'];
+                      exit;
+                    }?></b></div>
                     <div class="profile-buttons">
                         <a class="open-right"><span class="octicon octicon-graph"></span>
                         <?php echo Html::a ('<i class="fa fa-user-circle"></i>',

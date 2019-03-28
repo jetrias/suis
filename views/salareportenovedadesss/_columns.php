@@ -69,6 +69,7 @@ return [
                           'data-toggle'=>'tooltip',
                           'data-confirm-title'=>'Are you sure?',
                           'data-confirm-message'=>'Are you sure want to delete this item'], 
+        'template'=>'{}',
     ],
 
 ];   

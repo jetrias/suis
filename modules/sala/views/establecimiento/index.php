@@ -24,6 +24,12 @@ $this->params['breadcrumbs'][] = $this->title;
             <a href="#" class="widget-toggle hidden"><i class="icon-down-open-2"></i></a>
         </div>
     </div>
+     <p>
+        <?= Html::a(Yii::t('app', 'Reporte'), ['salareportenovedadesss/index '], [
+            'class' => 'btn btn-success',
+            'data-title' => Yii::t('app', 'Imprimir Reporte')
+        ]) ?>
+    </p>
 
     <div class="widget-content padding">
         <?php Pjax::begin(['id' => 'establecimiento-grid-pjax']); ?>
