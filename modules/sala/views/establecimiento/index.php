@@ -108,6 +108,9 @@ $this->params['breadcrumbs'][] = $this->title;
                             case 'novedad':
                                 return ["novedades/save", 'id' => $model->id];
                                 break;
+                            case 'directorio':
+                                return ["directorio/save", 'id' => $model->id];
+                                break;
                         }
                     },
                     'buttons' => [
@@ -132,7 +135,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 'title' => 'Actualizar',
                                 'aria-label' => 'Actualizar',
                                 'data-pjax' => 0,
-                                'data-title' => 'Actualizar ' . $model->id,
+                                'data-title' => 'Actualizar teléfono: ' . $model->nombre,
                                 'class' => 'link-for-modal',
                             ]);
                         },
@@ -208,8 +211,20 @@ $this->params['breadcrumbs'][] = $this->title;
                                 'class' => 'link-for-modal',
                             ]);
                         },
+                        'directorio' => function ($url, $model, $key)  {
+                            $icon = Html::tag('span', '', [
+                                'class' => 'glyphicon glyphicon-phone',
+                            ]);
+                            return Html::a($icon, $url, [
+                                'title' => 'Directorio',
+                                'aria-label' => 'Directorio',
+                                'data-pjax' => 0,
+                                'data-title' => 'Directorio ' ,
+                                'class' => 'link-for-modal',
+                            ]);
+                        },
                     ],
-                    'template' => '{dialisis}{movimiento}{ambulancia}{sergeneral}{agua}{novedad}'
+                    'template' => '{dialisis}{movimiento}{ambulancia}{sergeneral}{agua}{novedad}{directorio}'
                 ],
             ],
         ]); ?>

@@ -2,8 +2,8 @@
 
 return [
     'class' => 'yii\db\Connection',
-   'dsn' => 'pgsql:host=10.29.84.162;dbname=suis',
+   'dsn' => 'pgsql:host=localhost;dbname=suis_sala',
     'username' => 'postgres',
-    'password' => 'post321gres',
+    'password' => '123456',
     'charset' => 'utf8',
 ];

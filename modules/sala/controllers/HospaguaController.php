@@ -69,7 +69,7 @@ class HospaguaController extends Controller
     public function actionSave($id=null)
     {
 
-      $hospital=$this->findModelByEstablecimiento($id);
+      $hospital=$this->findModelByEstablecimiento($id); 
         if ($hospital['id'] == null) {
             $model = new Hospagua();
         } else {
