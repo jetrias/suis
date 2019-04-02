@@ -43,8 +43,8 @@ class Salareportenovedadesss extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['codigo', 'estado', 'nombre', 'direccion', 'telefono', 'planta_electrica', 'observaciones_planta_electrica', 'agua', 'observaciones_agua', 'observaciones_generales', 'estatus'], 'default', 'value' => null],
-            [['observaciones_planta_electrica', 'observaciones_agua', 'observaciones_generales'], 'string'],
+            [['codigo', 'estado', 'nombre', 'direccion', 'telefono', 'planta_electrica', 'observaciones_planta_electrica', 'agua', 'observaciones_agua', 'observaciones_generales', 'estatus'], 'default', 'value' => 'SIN INFORMACION'],
+            [['observaciones_planta_electrica', 'observaciones_agua', 'observaciones_generales','nombre_director','telf_director','nombre_agua','telf_agua','nombre_planta','telf_planta','telf_hosp'], 'string'],
             [['codigo'], 'string', 'max' => 20],
             [['estado'], 'string', 'max' => 50],
             [['nombre'], 'string', 'max' => 150],
@@ -71,6 +71,13 @@ class Salareportenovedadesss extends \yii\db\ActiveRecord
             'observaciones_agua' => Yii::t('app', 'Observaciones Agua'),
             'observaciones_generales' => Yii::t('app', 'Observaciones Generales'),
             'estatus' => Yii::t('app', 'Estatus'),
+            'nombre_director'=> Yii::t('app', 'Nombre Director'),
+            'telf_director'=> Yii::t('app', 'Teléfono Director'),
+            'nombre_agua'=> Yii::t('app', 'Nombre Encargado de Agua'),
+            'telf_agua'=> Yii::t('app', 'Teléfono de Encargado de Agua'),
+            'nombre_planta'=> Yii::t('app', 'Nombre Encargado de Planta Eléctrica'),
+            'telf_planta'=> Yii::t('app', 'Teléfono Encargado Planta Eléctrica'),
+            'telf_hosp'=> Yii::t('app', 'Teléfono del Hospital'),
         ];
     }
 }

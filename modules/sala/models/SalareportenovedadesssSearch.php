@@ -18,7 +18,7 @@ class SalareportenovedadesssSearch extends Salareportenovedadesss
     public function rules()
     {
         return [
-            [['codigo', 'estado', 'nombre', 'direccion', 'telefono', 'planta_electrica', 'observaciones_planta_electrica', 'agua', 'observaciones_agua', 'observaciones_generales', 'estatus'], 'safe'],
+            [['codigo', 'estado', 'nombre', 'direccion', 'telefono', 'planta_electrica', 'observaciones_planta_electrica', 'agua', 'observaciones_agua', 'observaciones_generales', 'estatus','nombre_director','telf_director','nombre_agua','telf_agua','nombre_planta','telf_planta','telf_hosp'], 'safe'],
         ];
     }
 
@@ -64,7 +64,14 @@ class SalareportenovedadesssSearch extends Salareportenovedadesss
             ->andFilterWhere(['like', 'agua', $this->agua])
             ->andFilterWhere(['like', 'observaciones_agua', $this->observaciones_agua])
             ->andFilterWhere(['like', 'observaciones_generales', $this->observaciones_generales])
-            ->andFilterWhere(['like', 'estatus', $this->estatus]);
+            ->andFilterWhere(['like', 'estatus', $this->estatus])
+            ->andFilterWhere(['like', 'nombre_director',$this->nombre_director])
+            ->andFilterWhere(['like', 'telf_director',$this->telf_director])
+            ->andFilterWhere(['like', 'nombre_agua',$this->nombre_agua])
+            ->andFilterWhere(['like', 'telf_agua',$this->telf_agua])
+            ->andFilterWhere(['like', 'nombre_planta',$this->nombre_planta])
+            ->andFilterWhere(['like', 'telf_planta',$this->telf_planta])
+            ->andFilterWhere(['like', 'telf_hosp',$this->telf_hosp]);
 
         return $dataProvider;
     }

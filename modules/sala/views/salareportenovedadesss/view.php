@@ -21,6 +21,13 @@ use yii\widgets\DetailView;
             'observaciones_agua:ntext',
             'observaciones_generales:ntext',
             'estatus',
+            'nombre_director',
+            'telf_director',
+            'nombre_agua',
+            'telf_agua',
+            'nombre_planta',
+            'telf_planta',
+            'telf_hosp'
         ],
     ]) ?>
 

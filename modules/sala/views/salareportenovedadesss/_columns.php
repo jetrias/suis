@@ -28,7 +28,31 @@ return [
     ],
     [
         'class'=>'\kartik\grid\DataColumn',
-        'attribute'=>'telefono',
+        'attribute'=>'telf_hosp',
+    ],
+    [
+        'class'=>'\kartik\grid\DataColumn',
+        'attribute'=>'nombre_director',
+    ],
+    [
+        'class'=>'\kartik\grid\DataColumn',
+        'attribute'=>'telf_director',
+    ],
+    [
+        'class'=>'\kartik\grid\DataColumn',
+        'attribute'=>'nombre_agua',
+    ],
+    [
+        'class'=>'\kartik\grid\DataColumn',
+        'attribute'=>'telf_agua',
+    ],
+    [
+        'class'=>'\kartik\grid\DataColumn',
+        'attribute'=>'nombre_planta',
+    ],
+    [
+        'class'=>'\kartik\grid\DataColumn',
+        'attribute'=>'telf_planta',
     ],
      [
          'class'=>'\kartik\grid\DataColumn',
