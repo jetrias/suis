@@ -43,7 +43,7 @@ $menuCallback = function($menu){
   return $opt;
 };
 
-$opcMenu = array_merge(MenuHelper::getAssignedMenu(Yii::$app->user->id, 14, $menuCallback), [
+$opcMenu = array_merge(MenuHelper::getAssignedMenu(Yii::$app->user->id, 15, $menuCallback), [
   [
     'label' => Yii::$app->user->isGuest ? 'Iniciar Sesión' : 'Cerrar Sesión',
     'url' => Yii::$app->user->isGuest ? ['/site/login'] : ['/site/logout']
