@@ -76,10 +76,13 @@ class HospaguaController extends Controller
             $model = $this->findModel($hospital['id']);
         }
         $model->cod_establecimiento_salud=$id;
-        $model->id_usuario=Yii::$app->user->id;
+        $model->id_usuario=(string)Yii::$app->user->id;
         $model->fecha_sist=date('Y-m-d');
         $model->hora_sist=date('H:i:s');
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())){
+		if (!$model->save()) {
+        	  die(var_dump($model->getErrors()));
+		}
             echo "close-modal";
             exit;
         }

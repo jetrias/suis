@@ -50,6 +50,7 @@ class Hospmovimientohosp extends \yii\db\ActiveRecord
             [['codigo', 'establecimiento_de_salud', 'cod_establecimiento_salud', 'camas_operativas', 'pacientes_criticos_adultos', 'pacientes_criticos_ninos', 'uti_neonatal_pacientes', 'utineonatal_cupos_disponibles', 'uti_camas_operativas', 'uti_camas_disponibles', 'quirofanos_emergencias_operativos', 'quirofanos_emergencias_inoperativos', 'equipo_de_guardia', 'total_muertes_maternas', 'detalle_muerte_materna', 'servicio_hemoderivados', 'servicio_hemoderivados_operativos', 'observaciones', 'id_usuario', 'fecha_inf', 'fecha_sist', 'hora_sist'], 'default', 'value' => null],
             [['observaciones'], 'string'],
             [['codigo', 'establecimiento_de_salud', 'cod_establecimiento_salud', 'camas_operativas', 'pacientes_criticos_adultos', 'pacientes_criticos_ninos', 'uti_neonatal_pacientes', 'utineonatal_cupos_disponibles', 'uti_camas_operativas', 'uti_camas_disponibles', 'quirofanos_emergencias_operativos', 'quirofanos_emergencias_inoperativos', 'equipo_de_guardia', 'total_muertes_maternas', 'detalle_muerte_materna', 'servicio_hemoderivados', 'servicio_hemoderivados_operativos', 'id_usuario', 'fecha_inf', 'fecha_sist', 'hora_sist'], 'string', 'max' => 255],
+            [['motivo_quirofano_inoperativo'], 'string', 'max' => 255],
         ];
     }
 
@@ -69,9 +70,10 @@ class Hospmovimientohosp extends \yii\db\ActiveRecord
             'utineonatal_cupos_disponibles' => Yii::t('app', ' Cupos Disponibles Uti neonatal'),
             'uti_camas_operativas' => Yii::t('app', 'Uti Camas Operativas'),
             'uti_camas_disponibles' => Yii::t('app', 'Uti Camas Disponibles'),
-            'quirofanos_emergencias_operativos' => Yii::t('app', 'Quirofanos Emergencias Operativos'),
-            'quirofanos_emergencias_inoperativos' => Yii::t('app', 'Quirofanos Emergencias Inoperativos'),
-            'equipo_de_guardia' => Yii::t('app', 'El Equipo De Guardia esta completo?'),
+            'quirofanos_emergencias_operativos' => Yii::t('app', 'Quirofanos  Operativos'),
+            'quirofanos_emergencias_inoperativos' => Yii::t('app', 'Quirofanos Inoperativos'),
+            'motivo_quirofano_inoperativo' => Yii::t('app', 'Causas Quirofanos Inoperativos'),
+            'equipo_de_guardia' => Yii::t('app', 'El Equipo De Guardia esta completo?'), 
             'total_muertes_maternas' => Yii::t('app', 'Total Muertes Maternas'),
             'detalle_muerte_materna' => Yii::t('app', 'Detalle Muerte Materna'),
             'servicio_hemoderivados' => Yii::t('app', 'Tiene Servicio Hemoderivados'),

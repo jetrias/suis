@@ -3,16 +3,16 @@
 namespace app\modules\sala\controllers;
 
 use Yii;
-use app\modules\sala\models\Directorio;
-use app\modules\sala\models\DirectorioSearch;
+use app\modules\sala\models\Saladpdm;
+use app\modules\sala\models\SaladpdmSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * DirectorioController implements the CRUD actions for Directorio model.
+ * SaladpdmController implements the CRUD actions for Saladpdm model.
  */
-class DirectorioController extends Controller
+class SaladpdmController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -34,14 +34,14 @@ class DirectorioController extends Controller
     }
 
     /**
-     * Lists all Directorio models.
+     * Lists all Saladpdm models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new DirectorioSearch();
+        $searchModel = new SaladpdmSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
+       // $this ->layout='/sala/layout/menu';
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
@@ -49,7 +49,7 @@ class DirectorioController extends Controller
     }
 
     /**
-     * Displays a single Directorio model.
+     * Displays a single Saladpdm model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -62,40 +62,30 @@ class DirectorioController extends Controller
     }
 
     /**
-     * Creates a new Directorio model or update an existing one.
+     * Creates a new Saladpdm model or update an existing one.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionSave($id=null)
     {
-        $directorio=$this->findModelByEstablecimiento($id);
-         
-        if ($directorio['id'] == null) {
-            $model = new Directorio();
+        if ($id == null) {
+            $model = new Saladpdm();
         } else {
-            $model = $this->findModel($directorio['id']);
+            $model = $this->findModel($id);
         }
-		$model->cod_establecimiento=$id;
-        $model->id_usuario=Yii::$app->user->id;
-        $model->fecha_sist=date('Y-m-d');
-        $model->hora_sist=date('H:i:s');
-        //die(var_dump(Yii::$app->user->id));
-        if ($model->load(Yii::$app->request->post())){
-         	$model->save();
-         	if (!$model->save()){
-        	 die(var_dump($model->getErrors()));
-        	}
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
             echo "close-modal";
             exit;
         }
-        
+
         return $this->renderAjax('form', [
             'model' => $model,
         ]);
     }
 
     /**
-     * Deletes an existing Directorio model.
+     * Deletes an existing Saladpdm model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -109,26 +99,18 @@ class DirectorioController extends Controller
     }
 
     /**
-     * Finds the Directorio model based on its primary key value.
+     * Finds the Saladpdm model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Directorio the loaded model
+     * @return Saladpdm the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Directorio::findOne($id)) !== null) {
+        if (($model = Saladpdm::findOne($id)) !== null) {
             return $model;
         }
 
-        throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
-    }
-    protected function findModelByEstablecimiento($id)
-    {
-      if($id!=null){
-        $model=Directorio::find()->where(['cod_establecimiento'=>$id])->one();
-              return $model;
-            }
         throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
     }
 }

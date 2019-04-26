@@ -1,7 +1,8 @@
 <?php
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-
+use yii\helpers\ArrayHelper;
+use app\modules\sala\models\Catcausasquiinoperativo;
 /* @var $this yii\web\View */
 /* @var $model app\modules\sala\models\Hospmovimientohosp */
 
@@ -56,23 +57,40 @@ $this->params['breadcrumbs'][] = $currentAction;
     </div>
     <div class="row">
         <div class="col-md-4">
-            <?= $form->field($model, 'quirofanos_emergencias_inoperativos')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'quirofanos_emergencias_inoperativos')->textInput(['maxlength' => true,'onchange'=>'qui_inoperativo($(this).find("option:selected").text());']) ?>
+        </div>
+        <div id="causas-ino" class="col-md-4">
+            <?php
+                //DropDownList para causas inoperatividad
+                echo $form->field($model, 'motivo_quirofano_inoperativo')->dropDownList(
+                ArrayHelper::map(Catcausasquiinoperativo::find()->all(),'descripcion','descripcion'),
+                [
+                 'required'=>'true',
+                 'id'=>'drop_causas_ino',
+                 'label'=>"Causas Inoperatividad",
+                 'prompt'=>'Seleccione...',
+                 //'required'=>'true',
+                 //'onchange' =>    
+                ])->label('Causas Inoperatividad');
+            ?> 
         </div>
         <div class="col-md-4">
             <?= $form->field($model, 'equipo_de_guardia')->textInput(['maxlength' => true]) ?>
         </div>
-        <div class="col-md-4">
-            <?= $form->field($model, 'total_muertes_maternas')->textInput(['maxlength' => true]) ?>
-        </div>
     </div>
 
     <div class="row">
+        <div class="col-md-4">
+            <?= $form->field($model, 'total_muertes_maternas')->textInput(['maxlength' => true]) ?>
+        </div>
         <div class="col-md-4">
             <?= $form->field($model, 'detalle_muerte_materna')->textInput(['maxlength' => true]) ?>
         </div>
         <div class="col-md-4">
             <?= $form->field($model, 'servicio_hemoderivados')->textInput(['maxlength' => true]) ?>
         </div>
+    </div>
+    <div class="row">
         <div class="col-md-4">
             <?= $form->field($model, 'servicio_hemoderivados_operativos')->textInput(['maxlength' => true]) ?>
         </div>
